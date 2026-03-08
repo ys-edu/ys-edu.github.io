@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>Ysabelle Kim's CS Online Portfolio</title>
+        <!--
+          This is the head section.
+          It includes optional information about the web page (author, date, etc)
+          It must include the character set and the title
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Ysabelle Kim</h1>
+        </header>
 
-</body>
+        <hr>
+        <nav>
+            <h2>
+                <a href="index.html">Home</a>
+                <a href="about.html"
+                   style="background-color:#64BEBE; color:#0A1313">About</a>
+                <a href="contact.html">Contact</a>
+            </h2>
+        </nav>
+
+        <br><br>
+        <div id="content">
+            <!-- experience data -->
+            <table>
+                <tr id="table-header">
+                    <td><strong>Programming Language</strong></td>
+                    <td><strong>Years Experience</strong></td>
+                </tr>
+                <tr class="table-row">
+                    <td>C++</td>
+                    <td>2</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Python</td>
+                    <td>2</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Java</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+        <ul>
+            <li><span class="hobby">Video games: I play too many. My current favorite is Satisfactory!</span></li>
+            <li><span class="hobby">Art: I do commissions for tabletop RPG characters, monsters, and other things!</span></li>
+            <li><span class="hobby">Writing: I write tabletop RPGs! I plan on using my computer science experience to create digital content for them.</span></li>
+            <li><span class="hobby">Programming: I have contributed to other tabletop RPG web apps!</span></li>
+        </ul>
+
+        <footer>
+            <hr>
+            <img src="img/Logo_Primary-Reversed-color.jpg" alt="Cal State Monterey Bay logo.">
+            <h6>CST336 Internet Programming. 2026&copy; Kim</h6>
+            <h6><strong>Disclaimer: The information in this webpage is for academic purposes only.</strong></h6>
+            <!-- Your last name and year here in ALL assignments -->
+        </footer>
+
+    </body>
 </html>
