@@ -108,12 +108,13 @@ div.gallery {
 
 div.gallery-item {
     margin: 5px;
-    border: 1px solid #ccc;
     width: 180px;
 }
 
 div.gallery-item:hover {
-    border: 1px solid #777;
+    width: auto;
+    height: 100%;
+    transition: .9s; /* transition effect */
 }
 
 div.gallery-item img {
