@@ -16,24 +16,39 @@
 
             <hr>
             <main>
-                <figure>
-                    <img src="img/isopod_empty.png" alt="isopod">
-                </figure>
-                <div id="index_main">
-                    <p>Lab 2!</p>
-                    <p>Enter a guess between 1 and 99!</p>
-                    <label for="playerGuess"></label><input type="text" id="playerGuess" size="8">
-                    <button id="guessButton"> Guess </button>
-                    <br>
-                    <button id="resetButton"> Reset Game </button>
-                    <div id="winRate"></div>
-                    <div id="feedback"></div>
-                    <div id="attemptsLeft"></div>
-                    <div> Previous Guesses: </div>
-                    <span id="previousGuesses"></span>
+                <div id="layered_img">
+                    <div class="box_container">
+                        <h2>Number Guessing Game!</h2>
+                        <hr>
+                        <p>Enter a number between 1 and 99!</p>
+                        <label for="playerGuess"></label><input type="text" id="playerGuess" size="8">
+                        <button id="guessButton"> Guess </button>
+                        <button id="resetButton"> Reset Game </button>
+                        <br>
+                    </div>
+                    <div class="box_container">
+                        <div id="winRate"></div>
+                        <div> Attempts Left:
+                            <span id="attemptsLeft"></span>
+                        </div>
+                        <div> Previous Guesses:
+                            <span id="previousGuesses"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layered_container">
+                    <div class="layer background">
+                        <img src="img/isopod_empty.png" alt="isopod">
+                    </div>
+                    <div class="layer foreground">
+                        <div id="feedback">
+                            <p>Hi! Guess a number to get started!</p>
+                        </div>
+                    </div>
                 </div>
                 <script src="js/numberGuess.js"></script>
             </main>
+
 
             <footer>
                 <hr>
