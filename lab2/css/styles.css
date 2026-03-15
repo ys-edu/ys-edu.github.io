@@ -1,5 +1,5 @@
 html {
-    background-color:#0A1313;
+    background-color:#141414;
 }
 
 header {
@@ -41,6 +41,10 @@ main {
     background-color: #31456B;
     padding: 15px;
     border-radius:25px;
+}
+
+#feedback {
+    background-color: #31456B;
 }
 
 main img {
