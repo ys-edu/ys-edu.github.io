@@ -1,10 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <title>Ysabelle Kim's HW 2</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+            <link href="css/styles.css" rel="stylesheet">
+        </head>
+        <body>
+            <header>
+                <h1>HW 2: US Geography Quiz</h1>
+            </header>
 
-</body>
-</html>
+            <hr>
+            <main>
+                <div id="layered_img">
+                    <div class="box_container">
+                        <h2>US Geography Quiz!</h2>
+                        <hr>
+                        <p>aaaa</p>
+                        <label for="playerGuess"></label><input type="text" id="playerGuess" size="8">
+                        <button id="guessButton"> Guess </button>
+                        <button id="resetButton"> Reset Game </button>
+                        <br>
+                    </div>
+                    <div class="box_container">
+                        <div id="winRate"></div>
+                        <div> Attempts Left:
+                            <span id="attemptsLeft"></span>
+                        </div>
+                        <div> Previous Guesses:
+                            <span id="previousGuesses"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layered_container">
+                    <div class="layer background">
+                        <img src="img/isopod_empty.png" alt="isopod">
+                    </div>
+                    <div class="layer foreground">
+                        <div id="feedback">
+                            <p>Hi! Guess a number to get started!</p>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/numberGuess.js"></script>
+            </main>
+
+
+            <footer>
+                <hr>
+                <img src="img/Logo_Primary-Reversed-color.jpg" alt="Cal State Monterey Bay logo.">
+                <h6>CST336 Internet Programming. 2026&copy; Kim</h6>
+                <h6><strong>Disclaimer: The information in this webpage is for academic purposes only.</strong></h6>
+                <!-- Your last name and year here in ALL assignments -->
+            </footer>
+        </body>
+    </html>
