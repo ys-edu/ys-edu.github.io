@@ -19,10 +19,11 @@ function gradeQuiz() {
     // variables
     let score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
-    console.log(q1Response);
+    let q2Response = document.querySelector("#q2").value;
+    console.log("Q1: "+q1Response+"Q2: "+q2Response);
 
     // grading Question 1:
-    if (q1Response === "alaska") {
+    if (q1Response === "bear") {
         document.querySelector("#q1Feedback").innerHTML = "Correct!";
         document.querySelector("#q1Feedback").className = "bg-success text-white";
         document.querySelector("#markImg1").innerHTML = "<img src='img/confirmed.png' width=50px alt='confirmed checkmark'>";
@@ -32,6 +33,18 @@ function gradeQuiz() {
         document.querySelector("#q1Feedback").innerHTML = "Incorrect...";
         document.querySelector("#q1Feedback").className = "bg-warning text-white";
         document.querySelector("#markImg1").innerHTML = "<img src='img/cancel.png' width=50px alt='xmark'>";
+    }
+    // grading Question 2:
+    if (q2Response === "ak") {
+        document.querySelector("#q2Feedback").innerHTML = "Correct!";
+        document.querySelector("#q2Feedback").className = "bg-success text-white";
+        document.querySelector("#markImg2").innerHTML = "<img src='img/confirmed.png' width=50px alt='confirmed checkmark'>";
+        score += 10;
+    }
+    else {
+        document.querySelector("#q2Feedback").innerHTML = "Incorrect...";
+        document.querySelector("#q2Feedback").className = "bg-warning text-white";
+        document.querySelector("#markImg2").innerHTML = "<img src='img/cancel.png' width=50px alt='xmark'>";
     }
     document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
 } // gradeQuiz()

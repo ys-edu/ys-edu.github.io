@@ -19,17 +19,30 @@
             <main>
                 <div>
                     <div>
-                        <h3><span id="markImg1"></span> Which state has the largest area in square miles?</h3>
-                        <label for="q1">Your answer: </label><input type="text" id="q1">
+                        <h3><span id="markImg1"></span> What type of animal is displayed on the California flag?</h3>
+                        <label for="q1">Enter here: </label><input type="text" id="q1">
                         <br><br>
                         <div id="q1Feedback"></div>
+                    </div>
+                    <div>
+                        <h3><span id="markImg2"></span> Which state has the largest area in square miles?</h3>
+                        <label for="q2">Select One: </label><select id="q2">
+                            <option value=""></option>
+                            <option value="wy">Wyoming</option>
+                            <option value="ny">New York</option>
+                            <option value="ok">Oklahoma</option>
+                            <option value="ak">Alaska</option>
+                            <option value="or">Oregon</option>
+                        </select>
                         <br><br>
-                        <h3 id="validation" class="bg-danger text-white"></h3>
-                        <button class="btn btn-outline-primary" id="quizButton"> Submit Quiz </button>
+                        <div id="q2Feedback"></div>
                     </div>
                 </div>
                 <br><br>
                 <div>
+                    <h3 id="validation" class="bg-danger text-white"></h3>
+                    <button class="btn btn-outline-primary" id="quizButton"> Submit Quiz </button>
+                    <br><br>
                     <h2 id="totalScore" class="text-info"></h2>
                 </div>
                 <script src="js/quizSubmit.js"></script>
