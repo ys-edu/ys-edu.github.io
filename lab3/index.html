@@ -19,19 +19,25 @@
     <h1 class="p-5 bg-info bg-gradient">Lab 3: Sign Up Page</h1>
 </header>
 <main>
-    <div class="bg-dark bg-gradient text-start text-wrap mx-auto p-3" style="width: 400px; border-radius: 25px">
+    <div class="position-relative bg-dark bg-gradient text-start text-wrap mx-auto p-4" style="width: 400px; border-radius: 25px">
         <form id="signupForm" action="form_complete.html">
-            First Name: <label><input type="text" name="fName"></label><br>
-            Last Name: <label><input type="text" name="lName"></label><br>
-            Gender:<br>
-            <label><input type="radio" name="gender" value="m"></label>Male
-            <label><input type="radio" name="gender" value="f"></label>Female
-            <label><input type="radio" name="gender" value="n"></label>Non-binary
-            <label><input type="radio" name="gender" value="p"></label>Prefer not to say<br>
-            Zip Code: <label for="zip"></label><input type="text" id="zip" name="zip"><br>
-            City: <span id="city"></span> <br>
-            Latitude: <span id="latitude"></span><br>
-            Longitude: <span id="longitude"></span><br><br>
+            <div class="d-flex flex-column justify-content-center">
+                First Name: <label><input type="text" name="fName"></label>
+                Last Name: <label><input type="text" name="lName"></label>
+            </div><br>
+            <div class="d-inline-flex flex-column align-self-auto">
+                Gender:<br>
+                <label><input type="radio" name="gender" value="m"> Male</label>
+                <label><input type="radio" name="gender" value="f"> Female</label>
+                <label><input type="radio" name="gender" value="n"> Non-binary</label>
+                <label><input type="radio" name="gender" value="p"> Prefer not to say</label>
+            </div><hr>
+            <div class="d-flex flex-column justify-content-center">
+                Zip Code: <label for="zip"></label><input type="text" id="zip" name="zip"><br>
+                City: <span id="city"></span> <br>
+                Latitude: <span id="latitude"></span><br>
+                Longitude: <span id="longitude"></span><br><br>
+            </div><br>
 
             State:
             <label for="state"></label><select id="state" name="state">
@@ -52,8 +58,10 @@
             Type Password Again: <label><input type="password"></label><br>
 
             <span id=”passwordError”></span>
-
-            <input type="submit" value="Sign up!">
+            <br><br>
+            <div class="text-center">
+                <input type="submit" value="Sign up!" class="btn btn-outline-light">
+            </div>
         </form>
     </div>
     <script src="js/sign_up.js"></script>

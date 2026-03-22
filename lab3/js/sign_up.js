@@ -49,7 +49,7 @@ function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
-    if (username.length == 0) {
+    if (username.length < 1) {
         document.querySelector("#usernameError").innerHTML = "Username is required!";
         isValid = false;
     }
