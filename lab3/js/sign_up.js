@@ -2,6 +2,8 @@
 document.querySelector("#zip").addEventListener("change", displayCity);
 document.querySelector("#state").addEventListener("change", displayCounties);
 document.querySelector("#username").addEventListener("change", checkUsername);
+document.querySelector("#pw").addEventListener("change", suggestPassword);
+document.querySelector("#retypePW").addEventListener("change", validateForm);
 document.querySelector("#signupForm").addEventListener("submit", function(event) {
     validateForm(event);
 });
@@ -45,23 +47,28 @@ async function checkUsername() {
     }
 }
 
+async function suggestPassword() {
+    document.querySelector("#suggestedPassword").innerHTML = "Suggested password: CSUmb$%?yAy";
+}
+
 function validateForm(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
-    let password = document.querySelector("#password").value;
-    if (username.length < 1) {
+    let password = document.querySelector("#pw").value;
+    let retypePassword = document.querySelector("#retypePW").value;
+    if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username is required!";
         isValid = false;
     }
-    if (password.length < 6) {
+    else if (password.length < 6) {
         document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters long!";
         isValid = false;
     }
-    if (password !== password) {
+    else if (retypePassword != password) {
         document.querySelector("#passwordError").innerHTML = "Passwords do not match!";
         isValid = false;
     }
-    if (!isValid) {
+    if (isValid == false) {
         e.preventDefault();
     }
 }
