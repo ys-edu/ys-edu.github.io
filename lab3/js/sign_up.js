@@ -56,6 +56,7 @@ function validateForm(e) {
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#pw").value;
     let retypePassword = document.querySelector("#retypePW").value;
+    document.querySelector("#passwordError").innerHTML = "";
     if (username.length == 0) {
         document.querySelector("#usernameError").innerHTML = "Username is required!";
         isValid = false;
