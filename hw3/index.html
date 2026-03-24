@@ -20,23 +20,24 @@
 </header>
 <main>
     <div class="position-relative bg-dark bg-gradient text-start text-wrap mx-auto p-4" style="width: 400px; border-radius: 25px">
-        <form id="signupForm" action="nickname_complete.html">
-            <div class="d-flex flex-column justify-content-center">
-                Nickname: <label><input type="text" name="nickname"></label>
-                <h3 id="nicknameError" class="bg-danger text-white"></h3>
-            </div><br>
-            <div class="d-flex flex-column justify-content-center">
-                Dex Number (1-1025): <label for="dexNum"><input type="text" id="dexNum" name="dexNum"></label><br>
-                <h3 id="dexNumberError" class="bg-danger text-white"></h3>
-                <!-- GET https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
-            </div>
-            <div>
-                Sprite <span id="pkmnSprite"></span><br> <!-- GET https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
-                Species <span id="pkmnName"></span><br> <!-- name: "wormadam" https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
-                Type <span id="pkmnTypes"></span><br> <!-- types: [] https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
+        <div class="text-center">
+            <button id="pkmnButton" type="button" class="btn btn-outline-light">Look for a Pokémon!</button>
+        </div><br>
+        <form id="pkmnForm" action="nickname_complete.html">
+            <div class="d-flex justify-content-center" id="pkmnBlock">
+                <img src="" id=pkmnSprite alt="Random Pokémon sprite image.">
+                <div>
+                    Dex #<span id="pkmnNum"></span><br>
+                    Species: <span id="pkmnName"></span><br> <!-- name: "wormadam" https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
+                    Type(s): <span id="pkmnTypes"></span><br> <!-- types: [] https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
+                </div>
             </div><br>
             <div class="text-center">
-                <input type="submit" value="Choose!">
+                Nickname: <label><input type="text" id="nickname"></label>
+                <p id="nicknameError" class="bg-danger text-white"></p>
+            </div><br>
+            <div class="text-center">
+                <input type="submit" value="Choose this Pokémon!">
             </div>
         </form>
         <script src="js/dex.js"></script>
