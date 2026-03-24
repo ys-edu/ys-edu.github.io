@@ -23,9 +23,11 @@
         <form id="signupForm" action="nickname_complete.html">
             <div class="d-flex flex-column justify-content-center">
                 Nickname: <label><input type="text" name="nickname"></label>
+                <h3 id="nicknameError" class="bg-danger text-white"></h3>
             </div><br>
             <div class="d-flex flex-column justify-content-center">
                 Dex Number (1-1025): <label for="dexNum"><input type="text" id="dexNum" name="dexNum"></label><br>
+                <h3 id="dexNumberError" class="bg-danger text-white"></h3>
                 <!-- GET https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
             </div>
             <div>
