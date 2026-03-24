@@ -21,11 +21,11 @@
 <main>
     <div class="position-relative bg-dark bg-gradient text-start text-wrap mx-auto p-4" style="width: 400px; border-radius: 25px">
         <div class="text-center">
-            <button id="pkmnButton" type="button" class="btn btn-outline-light">Look for a Pokemon!</button>
+            <button id="pkmnButton" type="button" class="btn btn-outline-light">Look for a Pokémon!</button>
         </div><br>
         <form id="pkmnForm" action="nickname_complete.html">
             <div class="d-flex justify-content-center" id="pkmnBlock">
-                <img src="" id=pkmnSprite alt="Random Pokemon sprite image.">
+                <img src="" id=pkmnSprite alt="Random Pokémon sprite image.">
                 <div>
                     Dex #<span id="pkmnNum"></span><br>
                     Species: <span id="pkmnName"></span><br> <!-- name: "wormadam" https://pokeapi.co/api/v2/pokemon/{id or name}/ -->
@@ -34,10 +34,10 @@
             </div><br>
             <div class="text-center">
                 Nickname: <label><input type="text" id="nickname"></label>
-                <h3 id="nicknameError" class="bg-danger text-white"></h3>
+                <p id="nicknameError" class="bg-danger text-white"></p>
             </div><br>
             <div class="text-center">
-                <input type="submit" value="Choose this Pokemon!">
+                <input type="submit" value="Choose this Pokémon!">
             </div>
         </form>
         <script src="js/dex.js"></script>

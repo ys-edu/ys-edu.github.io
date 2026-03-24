@@ -1,13 +1,13 @@
 // event listeners for pkmnButton, nickname, dexNum
-document.querySelector("#pkmnButton").addEventListener("click", displayPKMN);
-document.querySelector("#nickname").addEventListener("change", validateNickname);
 document.querySelector("#pkmnForm").addEventListener("submit", function(event) {
     validateNickname(event);
 });
+document.querySelector("#pkmnButton").addEventListener("click", displayPKMN);
+document.querySelector("#nickname").addEventListener("change", validateNickname);
 
 // initialize global variables
 let randomNum;
-// hide Pokemon stat block until button is pressed
+// hide Pokémon stat block until button is pressed
 document.querySelector("#pkmnForm").style.display = "none";
 
 // resets nicknameError and dexNumberError to blank
@@ -23,51 +23,29 @@ async function displayPKMN() {
     let url = `https://pokeapi.co/api/v2/pokemon/${randomNum}`;
     let response = await fetch(url);
     let data = await response.json();
-    pkmnSpriteImg = document.querySelector("#pkmnSprite");
+    let pkmnSpriteImg = document.querySelector("#pkmnSprite");
     pkmnSpriteImg.src = data.sprites.front_default;
     document.querySelector("#pkmnNum").innerHTML = data.id;
-    pkmnName = data.name;
+    let pkmnName = data.name;
     document.querySelector("#pkmnName").innerHTML =pkmnName.charAt(0).toUpperCase() + pkmnName.slice(1);
-    document.querySelector("#pkmnTypes").innerHTML = data.types[0].type;
+    document.querySelector("#pkmnTypes").innerHTML = data.types[0].type[0];
 }
 
 // validateNickname() checks if the nickname is between 1-10 characters long
-function validateNickname() {
+function validateNickname(e) {
     let isValid = true;
     let nickname = document.querySelector("#nickname").value;
     document.querySelector("#nicknameError").innerHTML = "";
     if (nickname.length > 10) {
-        document.querySelector("#usernameError").innerHTML = "Nickname is too long!";
+        document.querySelector("#nicknameError").innerHTML = "Nickname is too long!";
         isValid = false;
     }
     else if (nickname.length < 1) {
-        document.querySelector("#passwordError").innerHTML = "Nickname must be 1-10 characters long!";
+        document.querySelector("#nicknameError").innerHTML = "Nickname must be 1-10 characters long!";
         isValid = false;
     }
     if (isValid == false) {
         e.preventDefault();
-    }
-}
-
-function validateNum(e) {
-    let isValid = true;
-    let username = document.querySelector("#username").value;
-    let password = document.querySelector("#pw").value;
-    let retypePassword = document.querySelector("#retypePW").value;
-    document.querySelector("#passwordError").innerHTML = "";
-    if (username.length == 0) {
-        document.querySelector("#usernameError").innerHTML = "Username is required!";
-        isValid = false;
-    }
-    else if (password.length < 6) {
-        document.querySelector("#passwordError").innerHTML = "Password must be at least 6 characters long!";
-        isValid = false;
-    }
-    else if (retypePassword != password) {
-        document.querySelector("#passwordError").innerHTML = "Passwords do not match!";
-        isValid = false;
-    }
-    if (isValid == false) {
-        e.preventDefault();
+        e.stopImmediatePropagation();
     }
 }
