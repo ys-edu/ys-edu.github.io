@@ -1,57 +1,45 @@
-// event listeners for zip code text
-document.querySelector("#zip").addEventListener("change", displayCity);
-document.querySelector("#state").addEventListener("change", displayCounties);
-document.querySelector("#username").addEventListener("change", checkUsername);
-document.querySelector("#pw").addEventListener("change", suggestPassword);
-document.querySelector("#retypePW").addEventListener("change", validateForm);
+// event listeners for nickname, dexNum
+document.querySelector("#nickname").addEventListener("change", validateNickname);
+document.querySelector("#dexNum").addEventListener("change", displayPKMN);
+document.querySelector("#dexNum").addEventListener("change", validateNum);
 document.querySelector("#signupForm").addEventListener("submit", function(event) {
-    validateForm(event);
+    validateNum(event);
 });
 
-// displayCity() fetches data from web API and displays information after user enters a zip code
-async function displayCity() {
-    let zipCode = document.querySelector("#zip").value;
-    let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    document.querySelector("#city").innerHTML = data.city;
-    document.querySelector("#latitude").innerHTML = data.latitude;
-    document.querySelector("#longitude").innerHTML = data.longitude;
-}
+// resets nicknameError and dexNumberError to blank
+document.querySelector("#nicknameError").innerHTML = "";
+document.querySelector("#dexNumberError").innerHTML = "";
 
-async function displayCounties() {
-    let state = document.querySelector("#state").value;
-    let url = `https://csumb.space/api/countyListAPI.php?state=${state}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    let countyList = document.querySelector("#county");
-    countyList.innerHTML = "<option> Select County </option>";
-    for (let i = 0; i < data.length; i++) {
-        countyList.innerHTML += `<option> ${data[i].county} </option>`;
+// validateNickname() checks if the nickname is between 1-10 characters long
+function validateNickname() {
+    let isValid = true;
+    let nickname = document.querySelector("#nickname").value;
+    document.querySelector("#nicknameError").innerHTML = "";
+    if (nickname.length > 10) {
+        document.querySelector("#usernameError").innerHTML = "Nickname is too long!";
+        isValid = false;
+    }
+    else if (nickname.length < 1) {
+        document.querySelector("#passwordError").innerHTML = "Nickname must be 1-10 characters long!";
+        isValid = false;
+    }
+    if (isValid == false) {
+        e.preventDefault();
     }
 }
 
-async function checkUsername() {
-    let username = document.querySelector("#username").value;
-    let url = `https://csumb.space/api/usernamesAPI.php?username=${username}`;
+// displayPKMN() fetches data from web API and displays information after user enters a valid number
+async function displayPKMN() {
+    let dexNumber = document.querySelector("#dexNum").value;
+    let url = `https://pokeapi.co/api/v2/pokemon/${dexNumber}`;
     let response = await fetch(url);
     let data = await response.json();
-    let usernameError = document.querySelector("#usernameError");
-    if (data.available) {
-        usernameError.innerHTML = "Username is available.";
-        usernameError.style.color = "green";
-    }
-    else {
-        usernameError.innerHTML = "Username is taken.";
-        usernameError.style.color = "red";
-    }
+    document.querySelector("#pkmnSprite").innerHTML = data.sprites.front_default;
+    document.querySelector("#pkmnName").innerHTML = data.name.toUpperCase();
+    document.querySelector("#pkmnTypes").innerHTML = data.types;
 }
 
-async function suggestPassword() {
-    document.querySelector("#suggestedPassword").innerHTML = "Suggested password: CSUmb$%?yAy";
-}
-
-function validateForm(e) {
+function validateNum(e) {
     let isValid = true;
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#pw").value;
