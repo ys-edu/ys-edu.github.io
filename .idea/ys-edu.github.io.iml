@@ -8,5 +8,6 @@
     <orderEntry type="library" name="underscore" level="application" />
     <orderEntry type="library" name="underscore" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="animate.css" level="application" />
   </component>
 </module>
